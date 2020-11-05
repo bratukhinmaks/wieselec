@@ -1,0 +1,24 @@
+.letter-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.letter {
+  width:33%;
+}
+
+.letter button {
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 24px;
+  background-color: transparent;
+  border: #EF107E solid 2px;
+  border-radius: 8px;
+}
+
+.letter button:hover {
+  box-shadow: #EF107E 0 1px 3px;
+}

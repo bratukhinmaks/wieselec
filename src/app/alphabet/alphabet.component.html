@@ -1,0 +1,5 @@
+<div class="letter-container">
+  <div class="letter" *ngFor="let char of charArr">
+    <button (click)="createValue(char)">{{char | uppercase}}</button>
+  </div>
+</div>

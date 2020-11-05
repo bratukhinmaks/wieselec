@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+app-alphabet{
+  width: 30%
+}
+app-gamefield{
+  width: 40%
+}

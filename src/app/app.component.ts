@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'untitled10';
+  chosenChar: {char: string, counter: number}
+
+  getValue(event: {char: string, counter: number}): void {
+    this.chosenChar = event;
+  }
 }
