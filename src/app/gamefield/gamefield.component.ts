@@ -1,16 +1,23 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {CounterService} from '../shared/counter.service';
 
 @Component({
   selector: 'app-gamefield',
   templateUrl: './gamefield.component.html',
   styleUrls: ['./gamefield.component.css']
 })
-export class GamefieldComponent implements OnInit {
-  @Input() chosenChar: {char: string, counter: number};
+export class GamefieldComponent implements OnInit, OnChanges {
+  @Input() chosenChar: string;
   currentLevel: number;
-  constructor() { }
+  constructor(public counter: CounterService) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.chosenChar !== ){
+
+    }
   }
 
 }
