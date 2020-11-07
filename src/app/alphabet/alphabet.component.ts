@@ -21,7 +21,7 @@ export class AlphabetComponent implements OnInit {
     })
   }
 
-  createValue(char: string, i: number): void {
+  createValue(char: {char: string, clicked: boolean}, i: number): void {
     this.clickValue.emit(char.char);
     this.newArr[i].clicked = true;
   }

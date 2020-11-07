@@ -17,12 +17,15 @@ export class GamefieldComponent implements OnInit, OnChanges {
   actualChar: string;
   gameOver = false;
   visibleNumber = 0;
+  winner = false;
+  startTime: number;
+  finishTime: number;
 
   constructor(public counter: CounterService, public http: HttpService) {
   }
 
   ngOnInit(): void {
-    console.log(this.counter.count)
+    this.startTime = new Date().getTime();
     this.http.getWords().pipe(
       take(5),
       concatAll(),
@@ -45,7 +48,6 @@ export class GamefieldComponent implements OnInit, OnChanges {
         this.actualChar = this.words[this.currentLevel][char].char;
         this.words[this.currentLevel][char].visability = true;
         this.visibleNumber++;
-        console.log(this.visibleNumber);
       }
     }
     if (this.counter.count < 6 && this.chosenChar !== this.actualChar) {
@@ -58,15 +60,23 @@ export class GamefieldComponent implements OnInit, OnChanges {
   }
 
   checkIfWordComplete(word: any): void {
-    if (this.visibleNumber === word.length) {
-      this.restart.emit();
-      this.currentLevel++;
-      this.visibleNumber = 0;
-      this.counter.count = 0;
+    if(word) {
+      if (this.visibleNumber === word.length) {
+        this.restart.emit();
+        this.currentLevel++;
+        this.visibleNumber = 0;
+        this.counter.count = 0;
+      }
+      if(this.currentLevel >= 5) {
+        this.winner = true;
+        const actualTime = new Date().getTime()
+        this.finishTime = new Date(actualTime - this.startTime).getTime() / 1000;
+      }
     }
   }
 
   startAgain(): void {
+    this.startTime = new Date().getTime();
     this.gameOver = false;
     this.counter.count = 0;
     this.currentLevel = 0;
