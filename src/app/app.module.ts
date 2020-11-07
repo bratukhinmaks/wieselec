@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { AlphabetComponent } from './alphabet/alphabet.component';
 
 import { GamefieldComponent } from './gamefield/gamefield.component';
+import { HungmanComponent } from './hungman/hungman.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlphabetComponent,
-    GamefieldComponent
+    GamefieldComponent,
+    HungmanComponent
   ],
   imports: [
     BrowserModule

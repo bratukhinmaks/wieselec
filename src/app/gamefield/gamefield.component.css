@@ -1,0 +1,31 @@
+.word {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+  padding: 2px;
+  margin: 10px;
+}
+
+.word-container {
+  flex-direction: row;
+  display: flex;
+}
+
+.char {
+  color: red;
+  border-bottom: black;
+  padding: 3px;
+  font-size: 25px;
+}
+
+.hungman-field {
+  min-height: 400px;
+}
+
+.play-again {
+  padding: 10px 20px;
+  color: #EF107E;
+  border: 2px solid #EF107E;
+  border-radius: 8px;
+  background: transparent;
+}

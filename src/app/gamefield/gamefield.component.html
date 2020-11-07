@@ -1,4 +1,20 @@
-<h1>Level{{currentLevel}}</h1>
+<div *ngIf="!gameOver; else repeatGame">
+  <h1>Level {{currentLevel+1}}</h1>
+  <div class="hungman-field">
+    <app-hungman></app-hungman>
+  </div>
 
-{{chosenChar.char}}
-{{chosenChar.counter}}
+  <div class="words-containers" >
+    <div class="word-container" *ngFor="let word of words;let i = index">
+      <ng-container *ngIf="currentLevel === i">
+        <div class="word" *ngFor="let char of word" >
+          <div class="char" [hidden]="!char.visability" >{{char.char}}</div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<ng-template #repeatGame>
+  <h1>You loose......</h1>
+  <button class="play-again" (click)="startAgain()">Play Again</button>
+</ng-template>

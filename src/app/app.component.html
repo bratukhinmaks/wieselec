@@ -1,4 +1,4 @@
 <div class="container">
-  <app-alphabet (clickValue)="getValue($event)"></app-alphabet>
-  <app-gamefield [chosenChar] = 'chosenChar'></app-gamefield>
+  <app-alphabet (clickValue)="getValue($event)" #alphabet></app-alphabet>
+  <app-gamefield (restart)="alphabet.restartGame()" [chosenChar] = 'chosenChar'></app-gamefield>
 </div>

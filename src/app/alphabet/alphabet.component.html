@@ -1,5 +1,5 @@
 <div class="letter-container">
-  <div class="letter" *ngFor="let char of charArr">
-    <button (click)="createValue(char)">{{char | uppercase}}</button>
+  <div class="letter" *ngFor="let char of newArr; let i = index">
+    <button (click)="createValue(char,i)" [disabled]="char.clicked" [class.disabled] = 'char.clicked' >{{char.char | uppercase}}</button>
   </div>
 </div>
