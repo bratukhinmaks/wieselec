@@ -8,8 +8,8 @@ export class HttpService {
   words: string[] = [
     'home',
     'house',
-    'funerals',
-    'cemestry',
+    'man',
+    'woman',
     'glow'
   ]
 

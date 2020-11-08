@@ -77,6 +77,7 @@ export class GamefieldComponent implements OnInit, OnChanges {
 
   startAgain(): void {
     this.startTime = new Date().getTime();
+    this.winner = false;
     this.gameOver = false;
     this.counter.count = 0;
     this.currentLevel = 0;
